@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        $(function(){
+            $("#header").load("header.html");
+        });
+    </script>
+    <style>
+        table, tr, td{
+            border: 1px solid black;
+            border-collapse : collapse;
+            background-color: rgb(247, 180, 94);
+            padding: 10px;
+        }
+        .info{
+            height: 250px;
+            width: 250px;
+        }
+
+        .info tr td{
+            text-align: center;
+        }
+        #map{
+            width: 400px;
+            height: 300px;
+        }
+        .mid{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="total">
+        <div id="header"></div>
+
+        <div class="mid">
+            <div id="map"></div>
+            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey="></script>
+            <script>
+                var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                    mapOption = { 
+                        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                        level: 3 // 지도의 확대 레벨
+                    };
+
+                // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+                var map = new kakao.maps.Map(mapContainer, mapOption);
+            </script>
+            <div>
+                <table class="info">
+                    <tr>
+                        <td>대표번호</td>
+                        <td>02-144</td>
+                    </tr>
+                    <tr>
+                        <td>제품문의</td>
+                        <td>02-155</td>
+                    </tr>
+                    <tr>
+                        <td>위치안내</td>
+                        <td>02-166</td>
+                    </tr>
+                    <tr>
+                        <td>야간안내</td>
+                        <td>02-177</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+ 
+    
+</body>
+</html>

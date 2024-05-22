@@ -16,8 +16,6 @@ const p = new Promise((resolve, reject) => {
 .then((msg)=> {
     console.log(`3 ==> ${msg}`)
     let result = msg.split(",");
-    let a = parseInt(result[0])
-    let b = parseInt(result[1])
     console.log(`두 수의 합은 ${result[0]}`)
     console.log(`두 수의 곱은 ${result[1]}`)
 })

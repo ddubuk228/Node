@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("header.html");
+        });
+
+        function logIN() {
+        let id = document.getElementById('id').value;
+        let pwd = document.getElementById('pwd').value;
+        let result = document.getElementById('result');
+        let text = '';
+        
+        console.log(result);
+
+        if (id === 'test' && pwd === '1234') {
+            text = "로그인 성공";
+        } else {
+            text = "로그인 실패";
+        }
+        
+        result.innerHTML = text;
+}
+
+
+    </script>
+    <style>
+        input {
+            border: 1px solid blue;
+            background-color: antiquewhite;
+        }
+
+        input:focus{
+            outline:none;
+        }
+        
+        .login {
+            margin: 0 auto;
+            width: 300px;
+        }
+
+        .login ul{
+            list-style: none;
+        }
+        .login ul li:nth-child(3){
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="total">
+        <div id="header"></div>
+
+        <div class="login">
+            <ul>
+                <li>아이디 : <input type="text" name="id" id="id"></li>
+                <li>패스워드 <input type="password" name="pwd" id="pwd"></li>
+                <li><button id="login" onclick="logIN()">로그인</button></li>
+                <li><div id="result"></div></li>
+            </ul>
+        </div>
+    </div>   
+</body>
+</html>
